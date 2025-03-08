@@ -3,7 +3,7 @@ import { makeAbi } from './abiGenerator';
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-  const contractName = ''; // Todo: Deploy하는 컨트랙트의 이름을 입력해주세요
+  const contractName = 'Mytoken';
 
   console.log(`Deploying contracts with the account: ${deployer.address}`);
 
