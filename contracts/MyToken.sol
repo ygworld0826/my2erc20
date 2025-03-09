@@ -1,1 +1,1 @@
-contract Mytoken {}
+contract MyToken {}
