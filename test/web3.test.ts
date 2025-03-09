@@ -12,7 +12,7 @@ import {
   transferFrom,
 } from '../web3/web3';
 
-describe('Deploy 검사', function () {
+describe('Erc20 기능 Web3.js 검사', function () {
   let web3: any;
   let accounts: any;
   let newAddress: any;
