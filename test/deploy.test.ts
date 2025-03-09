@@ -5,7 +5,6 @@ import { getChainId } from '../web3/web3';
 import { ethers } from 'hardhat';
 
 describe('Deploy 검사', function () {
-  let Mytoken: any;
   let mytoken: any;
   let owner: any;
   let otherAccount: any;
