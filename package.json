@@ -2,7 +2,8 @@
   "name": "hardhat-project",
   "scripts": {
     "deploy": "npx hardhat run scripts/deploy.ts --network ganache",
-    "test:deploy": "npx hardhat test test/deploy.test.ts"
+    "test:deploy": "npx hardhat test test/deploy.test.ts",
+    "test:web3": "npx hardhat test test/web3.test.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
