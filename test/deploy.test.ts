@@ -11,7 +11,7 @@ describe('Deploy 검사', function () {
 
   beforeEach(async function () {
     [owner, otherAccount] = await ethers.getSigners();
-    const MytokenFactory = await ethers.getContractFactory('Mytoken');
+    const MytokenFactory = await ethers.getContractFactory('MyToken');
     mytoken = await MytokenFactory.deploy();
     await mytoken.waitForDeployment();
   });
