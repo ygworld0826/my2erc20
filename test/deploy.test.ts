@@ -39,13 +39,13 @@ describe('Deploy 검사', function () {
 
   describe('컨트랙트 구현', function () {
     it('컨트랙트에서 SPDX 주석으로 라이선스가 있어야 합니다.', async function () {
-      const contractPath = path.join(__dirname, '../contracts/Mytoken.sol');
+      const contractPath = path.join(__dirname, '../contracts/MyToken.sol');
       const sourceCode = fs.readFileSync(contractPath, 'utf8');
       expect(sourceCode.match(/\/\/ SPDX-License-Identifier:/)).to.not.be.null;
     });
 
     it('컨트랙트에서 Solidity 버전이 0.8.0 이상, 0.9.0 미만이어야 합니다.', async function () {
-      const contractPath = path.join(__dirname, '../contracts/Mytoken.sol');
+      const contractPath = path.join(__dirname, '../contracts/MyToken.sol');
       const sourceCode = fs.readFileSync(contractPath, 'utf8');
 
       const versionMatch = sourceCode.match(/pragma solidity\s+([^;]+);/);
@@ -58,7 +58,7 @@ describe('Deploy 검사', function () {
     });
 
     it('컨트랙트에서 @openzeppelin/contracts/token/ERC20/ERC20.sol을 import 해야 합니다.', function () {
-      const contractPath = path.join(__dirname, '../contracts/Mytoken.sol');
+      const contractPath = path.join(__dirname, '../contracts/MyToken.sol');
       const sourceCode = fs.readFileSync(contractPath, 'utf8');
       const importRegex =
         /import\s+["']@openzeppelin\/contracts\/token\/ERC20\/ERC20\.sol["'];/i;
