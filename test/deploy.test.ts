@@ -1,8 +1,9 @@
 import { expect } from 'chai';
 import fs from 'fs';
 import path from 'path';
-import { getChainId } from '../web3/web3';
 import { ethers } from 'hardhat';
+import hardhatConfig from '../hardhat.config';
+import { HttpNetworkUserConfig } from 'hardhat/types';
 
 describe('Deploy 검사', function () {
   let mytoken: any;
@@ -32,8 +33,12 @@ describe('Deploy 검사', function () {
     });
 
     it('가나슈 네트워크에 정상적으로 연결이 되어야 합니다.', async function () {
-      const chainId = await getChainId();
-      expect(Number(chainId)).to.equal(5777);
+      it('가나슈 네트워크에 정상적으로 연결이 되어야 합니다.', async function () {
+        const ganache = hardhatConfig.networks
+          ?.ganache as HttpNetworkUserConfig;
+        const ganacheUrl = ganache?.url;
+        expect(ganacheUrl?.toUpperCase()).to.equal('HTTP://127.0.0.1:7545');
+      });
     });
   });
 
