@@ -32,13 +32,10 @@ describe('Deploy 검사', function () {
       expect(isInstalled).to.be.true;
     });
 
-    it('가나슈 네트워크에 정상적으로 연결이 되어야 합니다.', async function () {
-      it('가나슈 네트워크에 정상적으로 연결이 되어야 합니다.', async function () {
-        const ganache = hardhatConfig.networks
-          ?.ganache as HttpNetworkUserConfig;
-        const ganacheUrl = ganache?.url;
-        expect(ganacheUrl?.toUpperCase()).to.equal('HTTP://127.0.0.1:7545');
-      });
+    it('가나슈 네트워크에 정상적으로 연결이 되어야 합니다.(hardhat.config.ts)', async function () {
+      const ganache = hardhatConfig.networks?.ganache as HttpNetworkUserConfig;
+      const ganacheUrl = ganache?.url;
+      expect(ganacheUrl?.toUpperCase()).to.equal('HTTP://127.0.0.1:7545');
     });
   });
 
